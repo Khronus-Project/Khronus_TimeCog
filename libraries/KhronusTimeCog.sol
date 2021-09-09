@@ -21,7 +21,7 @@ library KhronusTimeCog {
 
     /*  
         Time format conversion functions 
-        The functions below transform date formats either from date format to unix timestamp or from unix timestamp to date format.
+        The functions below transform date formats either from date format to day or seconds timestamps (unix format) or from timestamps to date format.
     */
 
     //Get a timestamp in days since begining of unix epoch from a Civil Date to make it a Unix Timestamp multiply by number of seconds in day or solidity (1 days)
@@ -44,7 +44,7 @@ library KhronusTimeCog {
         (_result[0],_result[1],_result[2]) = _deserializeDate(_timestampDays, _direction);
     }
     
-    //Time Delta
+    //Time Delta, returns the result in days of substracting the compared date from the base date, it returns the number of days and the direction 0 for positive, 1 for negative.
     function timeDelta(uint[3] memory _baseDate,uint[3] memory _comparedDate) internal pure returns (uint _timestampDays, uint _direction){
         require (isValidDate(_baseDate[0], _baseDate[1], _baseDate[2]) && isValidDate(_comparedDate[0], _comparedDate[1], _comparedDate[2]), "One of the dates is not valid");
         uint[2] memory baseT;
@@ -64,8 +64,7 @@ library KhronusTimeCog {
         }
     }
 
-    //Next Unit of time
-
+    //Next Unit of time, these functions return the unix timestamp of the next unit of time, the returned timestamp is always rounded to the 0 value.
     function nextMinute(uint _timestamp) internal pure returns (uint _result) {
         require (isValidTimestamp(_timestamp), "Not a valid timestamp");
         _result = _roundTimeUnit(_timestamp, 1 minutes) + 1  minutes;
@@ -80,7 +79,6 @@ library KhronusTimeCog {
         require (isValidTimestamp(_timestamp), "Not a valid timestamp");
         _result = _roundTimeUnit(_timestamp, 1 days) + 1 days;
     }
-
     
     function nextMonth(uint _timestamp) internal pure returns (uint _result) {
         require (isValidTimestamp(_timestamp), "Not a valid timestamp");
@@ -93,7 +91,7 @@ library KhronusTimeCog {
         _result = (_result * 1 days);
     }
 
-    //Add Units of Time
+    //Add Units of Time, returns the timestamp in seconds of adding a given number of units of time.
 
     function addMinutes(uint _timestamp, uint _minutes) internal pure returns (uint _result) {
         require (isValidTimestamp(_timestamp), "Not a valid timestamp");

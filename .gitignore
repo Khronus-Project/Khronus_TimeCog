@@ -8,3 +8,4 @@ venv
 scraps
 .pytest_cache
 scripts/debbuging_aids
+contracts/KhronusTimeCog_Contract.sol

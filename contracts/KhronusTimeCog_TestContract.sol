@@ -1,13 +1,12 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "libraries/KhronusTimeCog.sol";
+import "Khronus-Project/Khronus_TimeCog@0.9.8/libraries/KhronusTimeCog.sol";
 
 contract KhronusTimeCog_Test {
 
-     /*  
-        Time format conversion functions 
-        The functions below transform date formats either from date format to unix timestamp or from unix timestamp to date format.
+    /*  
+        This is a contract implementation aimed to allow the testing of the TimeCog library. 
     */
 
     //Get a timestamp in days since begining of unix epoch from a Civil Date to make it a Unix Timestamp multiply by number of seconds in day or solidity (1 days)
@@ -30,7 +29,7 @@ contract KhronusTimeCog_Test {
         (_timestampDays, _direction) = KhronusTimeCog.timeDelta(_baseDate, _comparedDate);
     }
 
-    //Next Unit of time
+    //Next Unit of time, these functions return the unix timestamp of the next unit of time, the returned timestamp is always rounded to the 0 value.
     function nextMinute(uint _timestamp) external pure returns (uint _result) {
         _result = KhronusTimeCog.nextMinute(_timestamp);
     }

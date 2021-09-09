@@ -33,36 +33,36 @@
 ### Convert Between Time Formats
 - Date object to serial
     - Function Description
-    ``getDayTimestamp(uint _year, uint _month, uint _day) public pure returns (uint _timestamp, uint _direction){}``
+        - ``getDayTimestamp(uint _year, uint _month, uint _day) public pure returns (uint _timestamp, uint _direction){}``
     - Inputs
         - Date object as three integers years, month, day
     - Outputs
         - Integer, TimeStamp in days
         - Integer, Direction 0 is positive 1 is negative
     - Function Call
-    ``KhronusTimeCog.getDayTimestamp(uint _year, uint _month, uint _day)``
+        - ``KhronusTimeCog.getDayTimestamp(uint _year, uint _month, uint _day)``
 
 - Timestamp to object 
     - Long
         - Function Description
-        ``getDateObject(uint _timestamp, uint _direction) public pure returns (uint[5] memory _result) {}``
+            - ``getDateObject(uint _timestamp, uint _direction) public pure returns (uint[5] memory _result) {}``
         - Inputs
             - Integer, Unix timestamp in seconds
             - Integer, Direction 0 is positive 1 is negative
         - Outputs
             - Array of 5 Integers, year, month, day, hour, minute.
         - Function Call
-        ``KhronusTimeCog.getDateObject(uint _timestamp, uint _direction)``
+            - ``KhronusTimeCog.getDateObject(uint _timestamp, uint _direction)``
     - Short
         - Function Description
-        ``getDateObjectShort(uint _timestampDays, uint _direction) public pure returns (uint[3] memory _result) {}`` 
+            - ``getDateObjectShort(uint _timestampDays, uint _direction) public pure returns (uint[3] memory _result) {}`` 
         - Inputs 
             - Integer, Timestamp in days
             - Integer, Direction 0 is positive 1 is negative
         - Outputs
             - Array of 3 Integers, year, month, day.
         - Function Call
-        ``KhronusTimeCog.getDateObjectShort(uint _timestampDays, uint _direction)``
+            - ``KhronusTimeCog.getDateObjectShort(uint _timestampDays, uint _direction)``
 
 ### Add Time
 - Functions
@@ -90,7 +90,7 @@
 
 ### Time Delta
 - Function Description
-``timeDelta(uint[3] memory _baseDate,uint[3] memory _comparedDate) public pure returns (uint _timestampDays, uint _direction){}``
+    - ``timeDelta(uint[3] memory _baseDate,uint[3] memory _comparedDate) public pure returns (uint _timestampDays, uint _direction){}``
 - Inputs
     - Array of 3 integers (year, month, date) base date
     - Array of 3 integers (year, month, date) compared date
@@ -98,7 +98,7 @@
     - Integer, Timestamp in days
     - Integer, Direction 0 is positive 1 is negative
 - Function Call
-```KhronusTimeCog.timeDelta(uint[3] memory _baseDate,uint[3] memory _comparedDate)``
+    - ``KhronusTimeCog.timeDelta(uint[3] memory _baseDate,uint[3] memory _comparedDate)``
 
 ### Next Unit of Time
 - Functions
@@ -119,7 +119,6 @@
     - ``KhronusTimeCog.nextHour(uint _timestamp)``
     - ``KhronusTimeCog.nextDay(uint _timestamp)``
     - ``KhronusTimeCog.nextMonth(uint _timestamp)``
-
 
 ## Tests
 - A set of test dates are generated between the the first day of 1740 and 2200 (exclusive). There is one day picked at random from each year that is added to the test cases. A single year is picked at random in the range, the complete set of dates in this random picked year is also part of the test cases.

@@ -7,4 +7,5 @@ reports/
 venv
 scraps
 .pytest_cache
-debbuging_aids
+scripts/debbuging_aids
+debugging_aids

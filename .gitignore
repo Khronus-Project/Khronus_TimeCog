@@ -7,5 +7,6 @@ reports/
 venv
 scraps
 .pytest_cache
-scripts/debbuging_aids
+scripts/debugging_aids
 contracts/KhronusTimeCog_Contract.sol
+tests/test_gas_TimeCog.py

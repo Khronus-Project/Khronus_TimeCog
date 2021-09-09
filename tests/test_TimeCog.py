@@ -120,14 +120,14 @@ def test_nextMonth(test_dates, khronus_times):
         else:
             testDateTime= date + relativedelta(seconds=+ randint(1,59), minutes=+ randint(1,59), hours=+ randint(1,23))
             case_expected = int(datetime.timestamp(testDateTime + relativedelta(second=0, minute=0, hour=0, day=1, months=+1)))
-            if case_expected <= 7258118400:
+            if case_expected < 7258118400:
                 case_actual = khronus_times.nextMonth(int(datetime.timestamp(testDateTime)))
                 assert case_actual == case_expected 
             else:
                 try: 
                     case_actual = khronus_times.nextMonth(int(datetime.timestamp(testDateTime)))
                 except Exception as e:
-                    assert e.message == "VM Exception while processing transaction: Not a valid timestamp"
+                    assert e.message == "VM Exception while processing transaction: revert not a valid date as input as date object"
 
 
 

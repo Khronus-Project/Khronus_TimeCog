@@ -8,4 +8,3 @@ venv
 scraps
 .pytest_cache
 scripts/debbuging_aids
-debugging_aids

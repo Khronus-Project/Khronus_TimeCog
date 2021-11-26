@@ -10,3 +10,5 @@ scraps
 scripts/debugging_aids
 contracts/KhronusTimeCog_Contract.sol
 tests/test_gas_TimeCog.py
+scripts/flatten_file.py
+flatten_file.txt

@@ -1,0 +1,25 @@
+{
+  "name": "@khronus/time-cog",
+  "version": "1.0.0",
+  "description": "A gas efficient library to manage time and timestamps in solidity",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Khronus-Project/Khronus_TimeCog.git"
+  },
+  "keywords": [
+    "soldity",
+    "khronus",
+    "time",
+    "unix",
+    "timestamp",
+    "time objects",
+    "date objects",
+    "add months"
+  ],
+  "author": "Khronus Project",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Khronus-Project/Khronus_TimeCog/issues"
+  },
+  "homepage": "https://github.com/Khronus-Project/Khronus_TimeCog#readme"
+}

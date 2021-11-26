@@ -28,7 +28,6 @@
 npm i @khronus/time-cog
 ```
 
-
 ## Conventions
 - All internal utility functions of the library are marked as Private. These functions are internal to the algorithm and offer little to no value to be open for client contract execution.
 - Functions might return more than one value. 

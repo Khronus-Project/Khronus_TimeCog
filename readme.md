@@ -16,12 +16,18 @@
 - You can copy the library and deploy directly into your project.
 ### Remix Usage
 - You can refer to the library directly in remix 
-    ``import "@khronus/time-cog@1.0.0/libraries/KhronusTimeCog.sol";``
+```
+import "@khronus/time-cog@1.0.0/libraries/KhronusTimeCog.sol";
+```
 ### Brownie-ETH
-- You can use the very convenient Brownie package manager to install directly from GitHub with the following command. 
-    - Brownie PM Install Khronus-Project/Khronus_TimeCog@[version]
-- Once the package is installed you can access the library by importing it to your contract with the following line.
-    - ``import "Khronus-Project/Khronus_TimeCog@0.9.8/libraries/KhronusTimeCog.sol";``
+- You can use the very convenient Brownie package manager to install directly from GitHub with the following command.
+``` 
+Brownie PM Install Khronus-Project/Khronus_TimeCog@[version]
+```
+- Once the package is installed you can access the library by importing it to your contract with the following line. 
+```
+import "Khronus-Project/Khronus_TimeCog@0.9.8/libraries/KhronusTimeCog.sol";
+```
 ### NPM Install 
 - You can install the Khronus Time-Cog package from NMP
 ```
@@ -41,36 +47,48 @@ npm i @khronus/time-cog
 ### Convert Between Time Formats
 - Date object to serial
     - Function Description
-        - ``getDayTimestamp(uint _year, uint _month, uint _day) public pure returns (uint _timestamp, uint _direction){}``
+    ```
+    getDayTimestamp(uint _year, uint _month, uint _day) public pure returns (uint _timestamp, uint _direction){}
+    ```
     - Inputs
         - Date object as three integers years, month, day
     - Outputs
         - Integer, TimeStamp in days
         - Integer, Direction 0 is positive 1 is negative
     - Function Call
-        - ``KhronusTimeCog.getDayTimestamp(uint _year, uint _month, uint _day)``
+    ```
+    KhronusTimeCog.getDayTimestamp(uint _year, uint _month, uint _day)
+    ```
 
 - Timestamp to object 
     - Long
         - Function Description
-            - ``getDateObject(uint _timestamp, uint _direction) public pure returns (uint[5] memory _result) {}``
+        ```
+        getDateObject(uint _timestamp, uint _direction) public pure returns (uint[5] memory _result) {}
+        ```
         - Inputs
             - Integer, Unix timestamp in seconds
             - Integer, Direction 0 is positive 1 is negative
         - Outputs
             - Array of 5 Integers, year, month, day, hour, minute.
         - Function Call
-            - ``KhronusTimeCog.getDateObject(uint _timestamp, uint _direction)``
+        ```
+        KhronusTimeCog.getDateObject(uint _timestamp, uint _direction)
+        ```
     - Short
         - Function Description
-            - ``getDateObjectShort(uint _timestampDays, uint _direction) public pure returns (uint[3] memory _result) {}`` 
+        ```
+        getDateObjectShort(uint _timestampDays, uint _direction) public pure returns (uint[3] memory _result) {}
+        ```
         - Inputs 
             - Integer, Timestamp in days
             - Integer, Direction 0 is positive 1 is negative
         - Outputs
             - Array of 3 Integers, year, month, day.
         - Function Call
-            - ``KhronusTimeCog.getDateObjectShort(uint _timestampDays, uint _direction)``
+        ```
+        KhronusTimeCog.getDateObjectShort(uint _timestampDays, uint _direction)
+        ```
 
 ### Add Time
 - Functions
@@ -79,10 +97,12 @@ npm i @khronus/time-cog
     - Add days
     - Add months
 - Function Descriptions
-    - ``function addMinutes(uint _timestamp, uint _minutes) public pure returns (uint _result) {}``
-    - ``function addHours(uint _timestamp, uint _hours) public pure returns (uint _result) {}``
-    - ``function addDays(uint _timestamp, uint _days) public pure returns (uint _result) {}``
-    - ``function addMonths(uint _timestamp, uint _months) public pure returns (uint _result) {}``
+```
+function addMinutes(uint _timestamp, uint _minutes) public pure returns (uint _result) {}
+function addHours(uint _timestamp, uint _hours) public pure returns (uint _result) {}
+function addDays(uint _timestamp, uint _days) public pure returns (uint _result) {}
+function addMonths(uint _timestamp, uint _months) public pure returns (uint _result) {}
+```
 - Inputs
     - Integer, Unix timestamp in seconds 
     - Integer, Units to add
@@ -91,14 +111,18 @@ npm i @khronus/time-cog
 - Observations
     - Always exact, a minute add will always be rounded
 - Function Calls
-    - ``KhronusTimeCog.function addMinutes(uint _timestamp, uint _minutes)``
-    - ``KhronusTimeCog.function addHours(uint _timestamp, uint _hours)``
-    - ``KhronusTimeCog.function addDays(uint _timestamp, uint _days)``
-    - ``KhronusTimeCog.function addMonths(uint _timestamp, uint _months)``
+```
+KhronusTimeCog.function addMinutes(uint _timestamp, uint _minutes)
+KhronusTimeCog.function addHours(uint _timestamp, uint _hours)
+KhronusTimeCog.function addDays(uint _timestamp, uint _days)
+KhronusTimeCog.function addMonths(uint _timestamp, uint _months)
+```
 
 ### Time Delta
 - Function Description
-    - ``timeDelta(uint[3] memory _baseDate,uint[3] memory _comparedDate) public pure returns (uint _timestampDays, uint _direction){}``
+```
+timeDelta(uint[3] memory _baseDate,uint[3] memory _comparedDate) public pure returns (uint _timestampDays, uint _direction){}
+```
 - Inputs
     - Array of 3 integers (year, month, date) base date
     - Array of 3 integers (year, month, date) compared date
@@ -106,7 +130,9 @@ npm i @khronus/time-cog
     - Integer, Timestamp in days
     - Integer, Direction 0 is positive 1 is negative
 - Function Call
-    - ``KhronusTimeCog.timeDelta(uint[3] memory _baseDate,uint[3] memory _comparedDate)``
+```
+KhronusTimeCog.timeDelta(uint[3] memory _baseDate,uint[3] memory _comparedDate)
+```
 
 ### Next Unit of Time
 - Functions
@@ -114,19 +140,23 @@ npm i @khronus/time-cog
     - nextDay
     - nextMonth
 - Functions Description
-    - ``function nextMinute(uint _timestamp) public pure returns (uint _result) {}``
-    - ``function nextHour(uint _timestamp) public pure returns (uint _result) {}``
-    - ``function nextDay(uint _timestamp) public pure returns (uint _result) {}``
-    - ``function nextMonth(uint _timestamp) public pure returns (uint _result) {}``
+```
+function nextMinute(uint _timestamp) public pure returns (uint _result) {}
+function nextHour(uint _timestamp) public pure returns (uint _result) {}
+function nextDay(uint _timestamp) public pure returns (uint _result) {}
+function nextMonth(uint _timestamp) public pure returns (uint _result) {}
+```
 -  Inputs
     - Integer, Unix timestamp in seconds 
 - Outputs 
     - Integer, Unix timestamp in seconds
 - Function Calls 
-    - ``KhronusTimeCog.function nextMinute(uint _timestamp)``
-    - ``KhronusTimeCog.nextHour(uint _timestamp)``
-    - ``KhronusTimeCog.nextDay(uint _timestamp)``
-    - ``KhronusTimeCog.nextMonth(uint _timestamp)``
+```
+KhronusTimeCog.function nextMinute(uint _timestamp)
+KhronusTimeCog.nextHour(uint _timestamp)
+KhronusTimeCog.nextDay(uint _timestamp)
+KhronusTimeCog.nextMonth(uint _timestamp)
+```
 
 ## Tests
 - A set of test dates are generated between the the first day of 1740 and 2200 (exclusive). There is one day picked at random from each year that is added to the test cases. A single year is picked at random in the range, the complete set of dates in this random picked year is also part of the test cases.

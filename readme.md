@@ -17,7 +17,7 @@
 ### Remix Usage
 - You can refer to the library directly in remix 
 ```
-import "@khronus/time-cog@1.0.0/contracts/src/KhronusTimeCog.sol";
+import "@khronus/time-cog@[version]/contracts/src/KhronusTimeCog.sol";
 ```
 ### Brownie-ETH
 - You can use the very convenient Brownie package manager to install directly from GitHub with the following command.
@@ -26,7 +26,7 @@ Brownie PM Install Khronus-Project/Khronus_TimeCog@[version]
 ```
 - Once the package is installed you can access the library by importing it to your contract with the following line. 
 ```
-import "Khronus-Project/Khronus_TimeCog@0.9.8/contracts/src/KhronusTimeCog.sol";
+import "Khronus-Project/Khronus_TimeCog@[version]/contracts/src/KhronusTimeCog.sol";
 ```
 ### NPM Install 
 - You can install the Khronus Time-Cog package from NMP

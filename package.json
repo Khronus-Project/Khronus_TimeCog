@@ -1,6 +1,6 @@
 {
   "name": "@khronus/time-cog",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A gas efficient library to manage time and timestamps in solidity",
   "repository": {
     "type": "git",

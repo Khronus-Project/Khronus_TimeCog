@@ -1,7 +1,16 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "Khronus-Project/Khronus_TimeCog@0.9.8/libraries/KhronusTimeCog.sol";
+/** 
+ * @dev samples of imports using brownie and npm style (useful for remix) 
+ * Khronus utilizes brownie as its development framework so all imports in sample contracts, test and auxiliary scripts keep Brownie-eth convensions.
+ *  Brownie style import
+ *      import "Khronus-Project/Khronus_TimeCog@0.9.8/libraries/KhronusTimeCog.sol"
+ *  NPM install import (this can be used for remix)
+ *      import "@khronus/time-cog@1.0.0/libraries/KhronusTimeCog.sol";
+ **/
+
+import "Khronus-Project/Khronus_TimeCog@1.0.0/libraries/KhronusTimeCog.sol";
 
 contract KhronusTimeCog_Test {
 
